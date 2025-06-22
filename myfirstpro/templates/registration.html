@@ -1,0 +1,107 @@
+{% include 'header.html' %}
+<!-- End Header Area -->
+
+<!-- Breadcrumbs -->
+<div class="breadcrumbs overlay">
+  <div class="container">
+    <div class="bread-inner">
+      <div class="row">
+        <div class="col-12">
+          <h2>Blog Single</h2>
+          <ul class="bread-list">
+            <li><a href="index.html">Home</a></li>
+            <li><i class="icofont-simple-right"></i></li>
+            <li class="active">Blog Single</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h2>Book Appointment</h2>
+        <br />
+        <form class="form" method="post" action="{% url 'savereg' %}">
+          {% csrf_token %}
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="fname"
+                  placeholder="Name"
+                  required=""
+                />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  required=""
+                />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="phone"
+                  placeholder="Phone"
+                  required=""
+                />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input
+                  type="datetime-local"
+                  name="date"
+                  placeholder="date"
+                  required=""
+                />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Subject"
+                  required=""
+                />
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="form-group">
+                <textarea
+                  name="message"
+                  placeholder="Your Message"
+                  required=""
+                ></textarea>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-group login-btn">
+                <button class="btn" type="submit">Send</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- End Breadcrumbs -->
+
+<!-- Single News -->
+
+<!-- Footer Area -->
+{% include 'footer.html' %}

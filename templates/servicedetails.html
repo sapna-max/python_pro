@@ -1,0 +1,34 @@
+{% include 'header.html' %}
+<!-- Error Page -->
+<section class="why-choose section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>{{servicedetails.service_title}}</h1>
+        <p>{{servicedetails.service_desc | safe}}</p>
+
+        {% if servicedetails.service_pdf != '' %}
+        <a
+          style="
+            background-color: #04aa6d;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+          "
+          href="/media/{{servicedetails.service_pdf}}"
+          target="_blank"
+          >Click Here To Download</a
+        >
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+<!--/ End Error Page -->
+{% include 'footer.html' %}

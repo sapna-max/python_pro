@@ -1,0 +1,79 @@
+{% include 'header.html' %}
+<!-- End Header Area -->
+
+<!-- Breadcrumbs -->
+<div class="breadcrumbs overlay">
+  <div class="container">
+    <div class="bread-inner">
+      <div class="row">
+        <div class="col-12">
+          <h2>Blog Single</h2>
+          <ul class="bread-list">
+            <li><a href="index.html">Home</a></li>
+            <li><i class="icofont-simple-right"></i></li>
+            <li class="active">Blog Single</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <!-- End Breadcrumbs -->
+  {% comment %} {% for blog in blogData %}
+  <h1>
+    <a href="/blogdetails/{{blog.blog_slug}}"> {{blog.blog_title}} </a>
+  </h1>
+  <p style="background-color: yellow">{{blog.blog_desc | safe}}</p>
+  <p><img src="/media/{{blog.blog_image}}" /></p>
+  {% endfor %}
+</div> {% endcomment %}
+
+<section class="news-single section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-12">
+       
+            {% for blog in blogData %}
+            <div class="single-main">
+              <!-- News Head -->             
+              <!-- News Title -->
+              <h1 class="news-title">
+                <a href="/blogdetails/{{blog.blog_slug}}"> {{blog.blog_title}} </a>
+              </h1>
+              <div class="news-head">
+                <img src="/media/{{blog.blog_image}}" />
+              </div>
+              <!-- Meta -->
+              <div class="meta">
+                <div class="meta-left">
+                 
+                  <span class="date"
+                    ><i class="fa fa-clock-o"></i>03 Feb 2019</span
+                  >
+                </div>
+                <div class="meta-right">
+                  <span class="comments"
+                    ><a href="#"
+                      ><i class="fa fa-comments"></i>05 Comments</a
+                    ></span
+                  >
+                  <span class="views"><i class="fa fa-eye"></i>33K Views</span>
+                </div>
+              </div>
+              <!-- News Text -->
+              <div class="news-text">
+                <p style="background-color: yellow">{{blog.blog_desc | safe}}</p>
+               
+              </div>            
+            </div>
+            {% endfor %}
+          </div>     
+         </div>
+      </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- Footer Area -->
+{% include 'footer.html' %}

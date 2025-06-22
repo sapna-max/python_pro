@@ -1,0 +1,63 @@
+{% include 'header.html' %}
+<!-- End Header Area -->
+
+<!-- Breadcrumbs -->
+<div class="breadcrumbs overlay">
+  <div class="container">
+    <div class="bread-inner">
+      <div class="row">
+        <div class="col-12">
+          <h2>Blog Single</h2>
+          <ul class="bread-list">
+            <li><a href="index.html">Home</a></li>
+            <li><i class="icofont-simple-right"></i></li>
+            <li class="active">Blog Single</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+<div></div>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-12">
+        {% for n in pagedatafinal %}
+        <h6>
+          <i class="fa fa-arrow-right" style="font-size: 20px; color: red"></i>
+          &nbsp;&nbsp;<a href="/servicedetails/{{n.service_slug}}"
+            >{{n.service_title}}</a
+          >
+        </h6>
+        <br />
+
+        {% endfor %}
+
+        <!--/ End Error Inner -->
+      </div>
+    </div>
+    <div>
+      <div class="pagination" style="margin-bottom: 20px">
+        {% if pagedatafinal.has_previous %}
+        <a href="/service/?page={{pagedatafinal.previous_page_number}}"
+          >&laquo;</a
+        >
+        {% endif %} {% for n in totalpagelist %}
+        <a href="/service/?page={{n}}" style="padding: 30px">{{n}}</a>
+        {% endfor %} {% if pagedatafinal.has_next %}
+        <a href="/service/?page={{lastpage}}">last page</a>
+        <a href="/service/?page={{pagedatafinal.next_page_number}}">&raquo;</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- End Breadcrumbs -->
+
+<!-- Single News -->
+
+<!-- Footer Area -->
+{% include 'footer.html' %}
